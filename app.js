@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
       data.html = html;
       mailHelper.send(data, smtpData, function (error) {
         console.log('send error:', error);
+        
         return res.status(200).send('Ok');
       });
     });
