@@ -20,8 +20,8 @@ app.get('/', (req, res) => {
 
     mailHelper.setMaileTemplate('mail', data, function (html) {
       data.html = html;
-      mailHelper.send(data, smtpData, function (e, s) {
-        console.log('e:', e);
+      mailHelper.send(data, smtpData, function (error) {
+        console.log('send error:', error);
         return res.status(200).send('Ok');
       });
     });
