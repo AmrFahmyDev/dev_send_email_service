@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     }
 
     mailHelper.setSmtpTransport(smtpData);
-    var data = { to: 'amr.fahmy@linkdev.com', message: 'Hello Dear', subject: 'Thank you' };
+    var data = { to: 'amr.fahmy@linkdev.com', message: 'Hello Dear', subject: 'Thank you for using exchange online service' };
 
     mailHelper.setMaileTemplate('mail', data, function (html) {
       data.html = html;
