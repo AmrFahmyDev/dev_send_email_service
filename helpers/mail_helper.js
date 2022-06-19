@@ -7,12 +7,12 @@ module.exports = {
     getSMTPsettings: function (callback) {
         const configData = {
             debug: process.env.smtp_debug || true,
-            smtpHost: process.env.smtp_host || "smtpHost",
+            smtpHost: process.env.SMTP_HOST || "smtpHost",
             smtpPort: process.env.smtp_port || 587,
             smtpSecure: process.env.smtp_secure || true,
             smtpSecureConnection: process.env.smtp_secure_connection || false,
-            smtpUser: process.env.smtp_user || "smtpUser",
-            smtpPassword: process.env.smtp_password || "smtpPassword",
+            smtpUser: process.env.SMTP_USER || "smtpUser",
+            smtpPassword: process.env.SMTP_PASSWORD || "smtpPassword",
             smtpFrom: process.env.smtp_from || "Exchange Online Service' <no-reply@bubbles.cc>"
         }
         
