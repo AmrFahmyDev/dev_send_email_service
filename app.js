@@ -9,12 +9,12 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   console.log('req.quary:', req.quary);
-  return handleSendMail();
+  return handleSendMail(res,null);
 });
 
 app.get('/', (req, res) => {
   console.log('req.body:', req.body);
-  return handleSendMail(req.body.to);
+  return handleSendMail(res, req.body.to);
 });
 
 app.get('/health', (req, res) => {
@@ -26,7 +26,7 @@ app.listen(8080, () => {
   console.log('App listening on port 8080!');
 });
 
-function handleSendMail(mailAddress) {
+function handleSendMail(res, mailAddress) {
   let data = { to: mailAddress || 'amr.fahmy@linkdev.com', message: 'Hello Dear', subject: 'Thank you for using exchange online service' };
 
   mailHelper.getSMTPsettings(function (smtpData) {
