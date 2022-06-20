@@ -27,7 +27,7 @@ app.listen(8080, () => {
 });
 
 function handleSendMail(res, mailAddress) {
-  let data = { to: mailAddress || 'amr.fahmy@linkdev.com', message: 'Hello Dear', subject: 'Thank you for using exchange online service' };
+  let data = { to: mailAddress || 'amr.fahmy@linkdev.com', message: 'Hello Dear', subject: 'Thank you' };
 
   mailHelper.getSMTPsettings(function (smtpData) {
     if (!smtpData) {
