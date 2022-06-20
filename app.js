@@ -12,9 +12,9 @@ app.get('/', (req, res) => {
   return handleSendMail(res,null);
 });
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
   console.log('req.body:', req.body);
-  return handleSendMail(res, req.body.to);
+  return handleSendMail(res, req.body.mailAddress);
 });
 
 app.get('/health', (req, res) => {
