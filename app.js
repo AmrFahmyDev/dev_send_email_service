@@ -29,7 +29,7 @@ const run = async () => {
 
   await consumer.run({
     eachMessage: async ({ topic, partition, message }) => {
-      var mailAddress = message.mailAddress.toString();
+      var mailAddress = message.value.toString();
       console.log({
         partition,
         offset: message.offset,
