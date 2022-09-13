@@ -36,13 +36,14 @@ const run = async () => {
         value: mailAddress,
       })
 
-      handleSendMail(req.body.mailAddress, (response) => {
-        producer.send({
-          topic: 'send-email',
-          messages: [
-            { value: response.msg },
-          ],
-        });
+      handleSendMail(mailAddress, (response) => {
+        console.log('response.msg:', response.msg);
+        // producer.send({
+        //   topic: 'send-email',
+        //   messages: [
+        //     { value: response.msg },
+        //   ],
+        // });
         // return res.status(response.status).send(response.msg);
       });
     },
